@@ -1,4 +1,4 @@
-import QuickUnion from '../../dataStructures/QuickUnion/QuickUnion';
+import QuickUnion from '../../dataStructures/QuickUnion';
 
 export default function removeStones(stones: Array<[number, number]>): number {
 	const n = stones.length;

@@ -1,4 +1,4 @@
-import QuickUnion from './QuickUnion';
+import QuickUnion from './';
 
 describe('QuickUnion', () => {
 	it('should calculate group numbers correctly', () => {

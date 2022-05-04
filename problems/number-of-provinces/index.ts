@@ -1,4 +1,4 @@
-import QuickUnion from '../../dataStructures/QuickUnion/QuickUnion';
+import QuickUnion from '../../dataStructures/QuickUnion';
 
 export default function findCircleNum(isConnected: number[][]): number {
 	const union = new QuickUnion(isConnected.length)
