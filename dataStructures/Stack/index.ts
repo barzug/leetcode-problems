@@ -1,5 +1,5 @@
-import ArrayStack from "./ArrayStack";
-import LinkedListStack from "./LinkedListStack";
+import ArrayStack from './ArrayStack';
+import LinkedListStack from './LinkedListStack';
 
 export { ArrayStack, LinkedListStack };
 

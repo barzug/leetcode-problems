@@ -9,7 +9,6 @@ export default class ArrayStack<T = string> {
 		return this.array.pop();
 	}
 
-
 	public empty(): boolean {
 		return this.array.length === 0;
 	}

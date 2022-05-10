@@ -1,7 +1,7 @@
 import QuickUnion from '../../dataStructures/QuickUnion';
 
 export default function findCircleNum(isConnected: number[][]): number {
-	const union = new QuickUnion(isConnected.length)
+	const union = new QuickUnion(isConnected.length);
 
 	for (let i = 0; i < isConnected.length; i++) {
 		for (let j = i; j < isConnected[i].length; j++) {
@@ -11,5 +11,5 @@ export default function findCircleNum(isConnected: number[][]): number {
 		}
 	}
 
-	return union.getGroupsNumber()
-};
+	return union.getGroupsNumber();
+}

@@ -26,6 +26,5 @@ export default function regionsBySlashes(grid: string[]): number {
 		}
 	}
 
-
 	return quickUnion.getGroupsNumber();
-};
+}

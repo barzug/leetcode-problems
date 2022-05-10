@@ -15,7 +15,7 @@ export default class LinkedListStack<T = string> {
 
 		this.first = new Node(element);
 
-		this.first.next = prevFirst
+		this.first.next = prevFirst;
 	}
 
 	public pop(): T | void {
@@ -25,7 +25,6 @@ export default class LinkedListStack<T = string> {
 
 		return element;
 	}
-
 
 	public empty(): boolean {
 		return !this.first;

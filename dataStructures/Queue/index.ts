@@ -12,11 +12,10 @@ export default class ArrayQueue<T = string> {
 		}
 
 		const element = this.array[this.first];
-		this.first++
+		this.first++;
 
 		return element;
 	}
-
 
 	public empty(): boolean {
 		return this.array.length === this.first;
