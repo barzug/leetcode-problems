@@ -3,22 +3,23 @@ export default function dailyTemperatures(temperatures: number[]): number[] {
 		return [];
 	}
 
-	const temperaturesDay: Array<number> = [];
-
-	const warmerDaysArray: Array<number> = [];
+	const warmerDaysArray = new Array<number>(temperatures.length).fill(0);
+	let rightMax = -Infinity;
 
 	for (let i = temperatures.length - 1; i >= 0; i--) {
-		const warmerDays = temperaturesDay
-			.slice(temperatures[i] + 1)
-			.filter((value) => !!value);
+		if (temperatures[i] >= rightMax) {
+			rightMax = temperatures[i];
 
-		if (warmerDays.length === 0) {
-			warmerDaysArray[i] = 0;
-		} else {
-			warmerDaysArray[i] = Math.min(...warmerDays) - i;
+			continue;
 		}
 
-		temperaturesDay[temperatures[i]] = i;
+		let warmerDayDelay = 1;
+
+		while (temperatures[i + warmerDayDelay] <= temperatures[i]) {
+			warmerDayDelay += warmerDaysArray[i + warmerDayDelay];
+		}
+
+		warmerDaysArray[i] = warmerDayDelay;
 	}
 
 	return warmerDaysArray;
