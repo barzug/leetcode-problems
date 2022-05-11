@@ -1,6 +1,6 @@
 import findRedundantConnection from './index';
 
-describe('regions-cut-by-slashes', () => {
+describe('redundant-connection', () => {
 	it('should work with test case 1', () => {
 		expect(
 			findRedundantConnection([

@@ -1,6 +1,6 @@
 import problemFunction from './index';
 
-describe('baseball-game', () => {
+describe('minimum-add-to-make-parentheses-valid', () => {
 	it('should work with test case 1', () => {
 		expect(problemFunction('())')).toBe(1);
 	});

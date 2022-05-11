@@ -1,6 +1,6 @@
 import findCircleNum from './index';
 
-describe('regions-cut-by-slashes', () => {
+describe('number-of-provinces', () => {
 	it('should work with test case 1', () => {
 		expect(
 			findCircleNum([

@@ -1,9 +1,9 @@
-import findCircleNum from './index';
+import removeStones from './index';
 
-describe('regions-cut-by-slashes', () => {
+describe('most-stones-removed-with-same-row-or-column', () => {
 	it('should work with test case 1', () => {
 		expect(
-			findCircleNum([
+			removeStones([
 				[0, 0],
 				[0, 1],
 				[1, 0],
@@ -16,7 +16,7 @@ describe('regions-cut-by-slashes', () => {
 
 	it('should work with test case 2', () => {
 		expect(
-			findCircleNum([
+			removeStones([
 				[0, 0],
 				[0, 2],
 				[1, 1],
@@ -27,6 +27,6 @@ describe('regions-cut-by-slashes', () => {
 	});
 
 	it('should work with test case 3', () => {
-		expect(findCircleNum([[0, 0]])).toBe(0);
+		expect(removeStones([[0, 0]])).toBe(0);
 	});
 });

@@ -1,6 +1,6 @@
 import problemFunction from './index';
 
-describe('baseball-game', () => {
+describe('remove-outermost-parentheses', () => {
 	it('should work with test case 1', () => {
 		expect(problemFunction('(()())(())')).toBe('()()()');
 	});
