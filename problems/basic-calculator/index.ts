@@ -56,6 +56,47 @@ function _calculate(s: string, first: number): [number, number] {
 	return [value, i];
 }
 
-export default function calculate(s: string): number {
+// faster, but not so beautiful
+function calculateRecursion(s: string): number {
 	return _calculate(s, 0)[0];
+};
+
+
+
+export default function calculate(s: string): number {
+	let sign = 1;
+	let result = 0;
+	const stack: Array<number> = [];
+
+	for (let i = 0; i < s.length; i++) {
+		if (s[i] === ' ') {
+			continue;
+		}
+
+		if (s[i] === '+')
+			sign = 1;
+		else if (s[i] === '-')
+			sign = -1;
+		else if (s[i] === '(') {
+			stack.push(result);
+			stack.push(sign);
+			result = 0;
+			sign = 1;
+		} else if (s[i] === ')') {
+			result = result * stack.pop() + stack.pop();
+		} else {
+			const numberString = s.slice(i);
+			const number = parseInt(numberString)
+			result += sign * number;
+
+			const position = numberString.search(/[ \(\)\+-]/);
+			if (position !== -1) {
+				i += position - 1
+			} else {
+				break;
+			}
+		}
+	}
+
+	return result;
 };
