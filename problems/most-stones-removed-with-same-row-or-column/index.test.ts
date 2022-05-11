@@ -1,6 +1,8 @@
+import path from 'path'
+
 import removeStones from './index';
 
-describe('most-stones-removed-with-same-row-or-column', () => {
+describe(path.basename(__dirname), () => {
 	it('should work with test case 1', () => {
 		expect(
 			removeStones([

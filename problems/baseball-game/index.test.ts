@@ -1,6 +1,8 @@
+import path from 'path'
+
 import calPoints from './index';
 
-describe('baseball-game', () => {
+describe(path.basename(__dirname), () => {
 	it('should work with test case 1', () => {
 		expect(calPoints(['5', '2', 'C', 'D', '+'])).toBe(30);
 	});

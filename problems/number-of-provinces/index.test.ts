@@ -1,6 +1,8 @@
+import path from 'path'
+
 import findCircleNum from './index';
 
-describe('number-of-provinces', () => {
+describe(path.basename(__dirname), () => {
 	it('should work with test case 1', () => {
 		expect(
 			findCircleNum([

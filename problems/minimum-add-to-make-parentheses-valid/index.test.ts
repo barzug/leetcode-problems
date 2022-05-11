@@ -1,6 +1,8 @@
+import path from 'path'
+
 import problemFunction from './index';
 
-describe('minimum-add-to-make-parentheses-valid', () => {
+describe(path.basename(__dirname), () => {
 	it('should work with test case 1', () => {
 		expect(problemFunction('())')).toBe(1);
 	});
