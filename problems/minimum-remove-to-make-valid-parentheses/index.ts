@@ -1,33 +1,22 @@
 export default function minRemoveToMakeValid(s: string): string {
-	let nesting = 0;
-	let result: Array<string> = [];
+	let result: Array<string> = s.split('');
+
 	let openParenthesesPositions: Array<number> = [];
 
-	for (let i = 0; i < s.length; i++) {
-		switch (s[i]) {
-			case '(':
-				nesting++;
-
-				openParenthesesPositions.push(result.length);
-				result.push(s[i]);
-
-				break;
-			case ')':
-				if (nesting !== 0) {
-					nesting--;
-					result.push(s[i]);
-				}
-
-				break;
-			default:
-				result.push(s[i]);
+	for (let i = 0; i < result.length; i++) {
+		if (result[i] === '(') {
+			openParenthesesPositions.push(i);
+		} else if (result[i] === ')') {
+			if (openParenthesesPositions.length) {
+				openParenthesesPositions.pop();
+			} else {
+				result[i] = '';
+			}
 		}
 	}
 
-	while (nesting > 0) {
-		result[openParenthesesPositions.pop()] = '';
-
-		nesting--;
+	for (let i = 0; i < openParenthesesPositions.length; i++) {
+		result[openParenthesesPositions[i]] = '';
 	}
 
 	return result.join('');
