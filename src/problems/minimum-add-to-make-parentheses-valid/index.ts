@@ -5,14 +5,14 @@ export default function minAddToMakeValid(s: string): number {
 	for (let i = 0; i < s.length; i++) {
 		switch (s[i]) {
 			case '(':
-				numberOfOpenParentheses++
+				numberOfOpenParentheses++;
 
 				break;
 			case ')':
 				if (numberOfOpenParentheses === 0) {
-					result++
+					result++;
 				} else {
-					numberOfOpenParentheses--
+					numberOfOpenParentheses--;
 				}
 
 				break;
@@ -20,4 +20,4 @@ export default function minAddToMakeValid(s: string): number {
 	}
 
 	return result + numberOfOpenParentheses;
-};
+}

@@ -1,21 +1,20 @@
-const VALID_OPERATIONS = '+-'
+const VALID_OPERATIONS = '+-';
 
-function calculateTwoNumbers(left: number, operation: string, right: number,) {
+function calculateTwoNumbers(left: number, operation: string, right: number) {
 	if (operation === '+') {
-		return left + right
+		return left + right;
 	} else {
-		return left - right
+		return left - right;
 	}
 }
 
 function _calculate(s: string, first: number): [number, number] {
 	let value = 0;
-	let operation = '+'
+	let operation = '+';
 
 	let i = first;
 	while (i < s.length) {
 		if (s[i] === ')') {
-
 			i++;
 			break;
 		}
@@ -36,7 +35,7 @@ function _calculate(s: string, first: number): [number, number] {
 		}
 
 		if (VALID_OPERATIONS.includes(s[i])) {
-			operation = s[i]
+			operation = s[i];
 
 			i++;
 			continue;
@@ -47,7 +46,7 @@ function _calculate(s: string, first: number): [number, number] {
 
 		const position = numberString.search(/[ \(\)\+-]/);
 		if (position !== -1) {
-			i += position
+			i += position;
 		} else {
 			break;
 		}
@@ -59,9 +58,7 @@ function _calculate(s: string, first: number): [number, number] {
 // faster, but not so beautiful
 function calculateRecursion(s: string): number {
 	return _calculate(s, 0)[0];
-};
-
-
+}
 
 export default function calculate(s: string): number {
 	let sign = 1;
@@ -73,10 +70,8 @@ export default function calculate(s: string): number {
 			continue;
 		}
 
-		if (s[i] === '+')
-			sign = 1;
-		else if (s[i] === '-')
-			sign = -1;
+		if (s[i] === '+') sign = 1;
+		else if (s[i] === '-') sign = -1;
 		else if (s[i] === '(') {
 			stack.push(result);
 			stack.push(sign);
@@ -86,12 +81,12 @@ export default function calculate(s: string): number {
 			result = result * stack.pop() + stack.pop();
 		} else {
 			const numberString = s.slice(i);
-			const number = parseInt(numberString)
+			const number = parseInt(numberString);
 			result += sign * number;
 
 			const position = numberString.search(/[ \(\)\+-]/);
 			if (position !== -1) {
-				i += position - 1
+				i += position - 1;
 			} else {
 				break;
 			}
@@ -99,4 +94,4 @@ export default function calculate(s: string): number {
 	}
 
 	return result;
-};
+}

@@ -8,7 +8,7 @@ class Solution {
 	}
 
 	reset(): number[] {
-		this.currentArray = this.originalArray.slice()
+		this.currentArray = this.originalArray.slice();
 
 		return this.originalArray;
 	}
@@ -18,13 +18,13 @@ class Solution {
 			const randomNumber = Math.floor(Math.random() * (i + 1));
 
 			if (i === randomNumber) {
-				continue
+				continue;
 			}
-			const temp = this.currentArray[i]
+			const temp = this.currentArray[i];
 			this.currentArray[i] = this.currentArray[randomNumber];
 			this.currentArray[randomNumber] = temp;
 		}
 
-		return this.currentArray
+		return this.currentArray;
 	}
 }

@@ -1,12 +1,11 @@
+const {pathsToModuleNameMapper} = require('ts-jest/utils');
 const {
-    compilerOptions
+	compilerOptions,
 } = require('./tsconfig.json');
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
-
 
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-    preset: 'ts-jest',
-    testEnvironment: 'node',
-    moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: `<rootDir>/${compilerOptions.baseUrl}` }),
+	preset: 'ts-jest',
+	testEnvironment: 'node',
+	moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {prefix: `<rootDir>/${compilerOptions.baseUrl}`}),
 };
