@@ -1,4 +1,4 @@
-import QuickUnion from '../../dataStructures/QuickUnion';
+import QuickUnion from '@/dataStructures/QuickUnion';
 
 export default function regionsBySlashes(grid: string[]): number {
 	const n = grid.length;

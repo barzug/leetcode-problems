@@ -1,4 +1,4 @@
-import { ArrayStack, LinkedListStack } from './';
+import { ArrayStack, LinkedListStack } from './index';
 
 [ArrayStack, LinkedListStack].forEach((Stack) => {
 	describe(`Stack: ${Stack.name}`, () => {

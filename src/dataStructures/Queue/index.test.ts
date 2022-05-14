@@ -1,4 +1,4 @@
-import Queue from './';
+import Queue from './index';
 
 describe('Queue', () => {
 	it('should use enqueue and dequeue operations correctly', () => {

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "prettier": "prettier --write dataStructures ./problems"
+    "prettier": "prettier --write src"
   },
   "keywords": [],
   "author": "",
