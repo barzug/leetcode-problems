@@ -26,8 +26,17 @@ describe('mergeSort', () => {
 			return b.localeCompare(a) > 0;
 		};
 
-		const array = ['a', 'ж', 'ё', 'е', 'г', 'в', 'б', 'д']
+		const array = ['a', 'ж', 'ё', 'е', 'г', 'в', 'б', 'д'];
 
-		expect(mergeSort(array.slice(), comparator)).toEqual(['a', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж']);
+		expect(mergeSort(array.slice(), comparator)).toEqual([
+			'a',
+			'б',
+			'в',
+			'г',
+			'д',
+			'е',
+			'ё',
+			'ж',
+		]);
 	});
 });

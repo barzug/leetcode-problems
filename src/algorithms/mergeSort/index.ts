@@ -1,19 +1,23 @@
-type Comparator<T> = (a: T, b: T) => boolean
+type Comparator<T> = (a: T, b: T) => boolean;
 
-const _defaultComparator: Comparator<any> = function(a, b) {
+const _defaultComparator: Comparator<any> = function (a, b) {
 	return b - a >= 0;
-}
+};
 
-function merge<T>(left: Array<T>, right: Array<T>, comparator: Comparator<T>): Array<T> {
+function merge<T>(
+	left: Array<T>,
+	right: Array<T>,
+	comparator: Comparator<T>
+): Array<T> {
 	const array = [];
 
 	let i = 0;
-	let j = 0
+	let j = 0;
 	while (i < left.length && j < right.length) {
 		if (comparator(left[i], right[j])) {
 			array.push(left[i++]);
 		} else {
-			array.push(right[j++])
+			array.push(right[j++]);
 		}
 	}
 
@@ -33,6 +37,9 @@ function _mergeSort<T>(array: Array<T>, comparator: Comparator<T>) {
 	return merge(arrayLeft, arrayRight, comparator);
 }
 
-export default function mergeSort<T = number>(array: Array<T>, comparator: Comparator<T> = _defaultComparator) {
+export default function mergeSort<T = number>(
+	array: Array<T>,
+	comparator: Comparator<T> = _defaultComparator
+) {
 	return _mergeSort(array, comparator);
 }
