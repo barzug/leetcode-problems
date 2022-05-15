@@ -14,7 +14,7 @@ export default class QuickUnion {
 		}
 	}
 
-	// takes amortized constant time alpha(n)
+	// takes log(n) or amortized constant time alpha(n) in case with compression
 	public findRoot(element: number): number {
 		let root = element;
 
@@ -32,7 +32,7 @@ export default class QuickUnion {
 		return root;
 	}
 
-	// takes amortized constant time alpha(n)
+	// takes log(n) or amortized constant time alpha(n) in case with compression
 	public unify(element1: number, element2: number): void {
 		const root1 = this.findRoot(element1);
 		const root2 = this.findRoot(element2);
