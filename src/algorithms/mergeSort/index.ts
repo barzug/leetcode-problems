@@ -24,22 +24,19 @@ function merge<T>(
 	return array.concat(left.slice(i), right.slice(j));
 }
 
-function _mergeSort<T>(array: Array<T>, comparator: Comparator<T>) {
+
+export default function mergeSort<T = number>(
+	array: Array<T>,
+	comparator: Comparator<T> = _defaultComparator
+) {
 	if (array.length <= 1) {
 		return array;
 	}
 
 	const mid = Math.floor(array.length / 2);
 
-	const arrayLeft = _mergeSort(array.slice(0, mid), comparator);
-	const arrayRight = _mergeSort(array.slice(mid), comparator);
+	const arrayLeft = mergeSort(array.slice(0, mid), comparator);
+	const arrayRight = mergeSort(array.slice(mid), comparator);
 
 	return merge(arrayLeft, arrayRight, comparator);
-}
-
-export default function mergeSort<T = number>(
-	array: Array<T>,
-	comparator: Comparator<T> = _defaultComparator
-) {
-	return _mergeSort(array, comparator);
 }
