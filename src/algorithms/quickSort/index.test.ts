@@ -1,6 +1,6 @@
-import mergeSort from './index';
+import quickSort from './index';
 
-describe('mergeSort', () => {
+describe('quickSort', () => {
 	it(`should sort arrays correctly`, () => {
 		const arrays = [
 			[1, 2, 3, 4],
@@ -13,12 +13,12 @@ describe('mergeSort', () => {
 		];
 
 		arrays.forEach((array) => {
-			expect(mergeSort(array.slice())).toEqual(array.slice().sort());
+			expect(quickSort(array.slice())).toEqual(array.slice().sort());
 		});
 	});
 
 	it(`should work with empty array`, () => {
-		expect(mergeSort([])).toEqual([]);
+		expect(quickSort([])).toEqual([]);
 	});
 
 	it(`should work with comparator`, () => {
@@ -28,7 +28,7 @@ describe('mergeSort', () => {
 
 		const array = ['a', 'ж', 'ё', 'е', 'г', 'в', 'б', 'д'];
 
-		expect(mergeSort(array.slice(), comparator)).toEqual([
+		expect(quickSort(array.slice(), comparator)).toEqual([
 			'a',
 			'б',
 			'в',
