@@ -5,26 +5,22 @@ export default function removeStones(stones: Array<[number, number]>): number {
 
 	const union = new QuickUnion(n);
 
-	const iIndexes: { [key: number]: number[] } = {};
-	const jIndexes: { [key: number]: number[] } = {};
+	const iIndexes: { [key: number]: number } = {};
+	const jIndexes: { [key: number]: number } = {};
 
 	stones.forEach(([i, j], unionPosition) => {
-		if (!iIndexes[i]) {
-			iIndexes[i] = [];
-		}
-		if (!jIndexes[j]) {
-			jIndexes[j] = [];
+		if (iIndexes[i] !== undefined) {
+			union.unify(unionPosition, iIndexes[i]);
+		} else {
+			iIndexes[i] = unionPosition;
 		}
 
-		iIndexes[i].push(unionPosition);
-		jIndexes[j].push(unionPosition);
+		if (jIndexes[j] !== undefined) {
+			union.unify(unionPosition, jIndexes[j]);
+		} else {
+			jIndexes[j] = unionPosition;
 
-		iIndexes[i].forEach((value) => {
-			union.unify(unionPosition, value);
-		});
-		jIndexes[j].forEach((value) => {
-			union.unify(unionPosition, value);
-		});
+		}
 	});
 
 	return n - union.getGroupsNumber();
