@@ -23,7 +23,7 @@ describe('mergeSort', () => {
 
 	it(`should work with comparator`, () => {
 		const comparator = (a: string, b: string): number => {
-			return b.localeCompare(a);
+			return a.localeCompare(b);
 		};
 
 		const array = ['a', 'ж', 'ё', 'е', 'г', 'в', 'б', 'д'];

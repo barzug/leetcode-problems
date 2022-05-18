@@ -1,7 +1,7 @@
 type Comparator<T> = (a: T, b: T) => number;
 
 const _defaultComparator: Comparator<any> = function(a, b) {
-	return b - a;
+	return a - b;
 };
 
 function _quickSort<T = number>(array: Array<T>, first: number, last: number, comparator: Comparator<T>) {
@@ -19,11 +19,11 @@ function _quickSort<T = number>(array: Array<T>, first: number, last: number, co
 	let i = first;
 
 	while (i <= right) {
-		if (comparator(comparable, array[i]) < 0) {
+		if (comparator(array[i], comparable) < 0) {
 			[array[left], array[i]] = [array[i], array[left]]
 			left++
 			i++
-		} else if (comparator(comparable, array[i]) > 0) {
+		} else if (comparator(array[i], comparable) > 0) {
 			[array[right], array[i]] = [array[i], array[right]]
 			right--
 		} else {

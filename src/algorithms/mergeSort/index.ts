@@ -1,7 +1,7 @@
 type Comparator<T> = (a: T, b: T) => number;
 
 const _defaultComparator: Comparator<any> = function (a, b) {
-	return b - a;
+	return a - b;
 };
 
 function merge<T>(
@@ -14,7 +14,7 @@ function merge<T>(
 	let i = 0;
 	let j = 0;
 	while (i < left.length && j < right.length) {
-		if (comparator(left[i], right[j]) > 0) {
+		if (comparator(right[j], left[i]) > 0) {
 			array.push(left[i++]);
 		} else {
 			array.push(right[j++]);
