@@ -8,17 +8,17 @@
 var solution = function(isBadVersion: any) {
 
 	function search(leftPos: number, rightPos: number) {
-		if (leftPos === rightPos) {
-			return leftPos;
+		while (leftPos < rightPos) {
+			const mid = leftPos + Math.floor((rightPos - leftPos) / 2)
+
+			if (isBadVersion(mid)) {
+				rightPos = mid;
+			} else {
+				leftPos = mid + 1
+			}
 		}
 
-		const mid = leftPos + Math.floor((rightPos - leftPos) / 2)
-
-		if (isBadVersion(mid)) {
-			return search(leftPos, mid);
-		} else {
-			return search(mid + 1, rightPos);
-		}
+		return leftPos
 	}
 
 	return function(n: number): number {
