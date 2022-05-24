@@ -1,7 +1,7 @@
 import path from 'path';
 import createBinaryTreeFromArray from '@/algorithms/createBinaryTreeFromArray'
 
-import problemFunction, {TreeNode} from './index';
+import problemFunction from './index';
 
 describe(path.basename(__dirname), () => {
 	it('should work with test case 1', () => {
