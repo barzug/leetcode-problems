@@ -10,14 +10,28 @@ export class TreeNode {
 	}
 }
 
-function addNodes<T>(position: number, array: Array<number>): TreeNode | null {
-	if (typeof array[position] === 'undefined' || array[position] === null) {
-		return null;
+export default function createBinaryTreeFromArray(array: Array<number>): TreeNode {
+	const queue: Array<TreeNode> = [];
+	const root = new TreeNode(array[0]);
+
+	queue.push(root);
+	let firstQueuePos = 0;
+	let position = 1;
+	while (queue.length !== firstQueuePos) {
+		const localRoot = queue[firstQueuePos++]
+
+		if (typeof array[position] !== 'undefined' && array[position] !== null) {
+			localRoot.left = new TreeNode(array[position]);
+			queue.push(localRoot.left)
+		}
+		position++
+
+		if (typeof array[position] !== 'undefined' && array[position] !== null) {
+			localRoot.right = new TreeNode(array[position]);
+			queue.push(localRoot.right)
+		}
+		position++
 	}
 
-	return new TreeNode(array[position], addNodes(2 * position + 1, array), addNodes(2 * position + 2, array));
-}
-
-export default function createBinaryTreeFromArray(array: Array<number>): TreeNode {
-	return addNodes(0, array);
+	return root;
 }
