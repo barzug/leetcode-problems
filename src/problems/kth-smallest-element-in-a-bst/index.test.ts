@@ -1,11 +1,10 @@
 import path from 'path';
-import createBinaryTreeFromArray from '@/algorithms/createBinaryTreeFromArray'
+import createBinaryTreeFromArray from '@/algorithms/createBinaryTreeFromArray';
 
 import problemFunction from './index';
 
 describe(path.basename(__dirname), () => {
 	it('should work with test case 1', () => {
-
 		expect(problemFunction(createBinaryTreeFromArray([3, 1, 4, null, 2]), 1)).toBe(1);
 	});
 

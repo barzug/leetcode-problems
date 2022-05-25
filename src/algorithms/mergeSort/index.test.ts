@@ -28,15 +28,6 @@ describe('mergeSort', () => {
 
 		const array = ['a', 'ж', 'ё', 'е', 'г', 'в', 'б', 'д'];
 
-		expect(mergeSort(array.slice(), comparator)).toEqual([
-			'a',
-			'б',
-			'в',
-			'г',
-			'д',
-			'е',
-			'ё',
-			'ж',
-		]);
+		expect(mergeSort(array.slice(), comparator)).toEqual(['a', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж']);
 	});
 });

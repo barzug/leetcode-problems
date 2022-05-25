@@ -16,4 +16,4 @@ export default function numRescueBoats(people: number[], limit: number): number 
 	}
 
 	return result;
-};
+}

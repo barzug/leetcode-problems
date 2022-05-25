@@ -12,22 +12,6 @@ describe(path.basename(__dirname), () => {
 	});
 
 	it('should work with test case 3', () => {
-		expect(
-			problemFunction([
-				'10',
-				'6',
-				'9',
-				'3',
-				'+',
-				'-11',
-				'*',
-				'/',
-				'*',
-				'17',
-				'+',
-				'5',
-				'+',
-			])
-		).toBe(22);
+		expect(problemFunction(['10', '6', '9', '3', '+', '-11', '*', '/', '*', '17', '+', '5', '+'])).toBe(22);
 	});
 });

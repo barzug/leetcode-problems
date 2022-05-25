@@ -5,26 +5,24 @@
  * };
  */
 
-var solution = function(isBadVersion: any) {
-
+var solution = function (isBadVersion: any) {
 	function search(leftPos: number, rightPos: number) {
 		while (leftPos < rightPos) {
-			const mid = leftPos + Math.floor((rightPos - leftPos) / 2)
+			const mid = leftPos + Math.floor((rightPos - leftPos) / 2);
 
 			if (isBadVersion(mid)) {
 				rightPos = mid;
 			} else {
-				leftPos = mid + 1
+				leftPos = mid + 1;
 			}
 		}
 
-		return leftPos
+		return leftPos;
 	}
 
-	return function(n: number): number {
-		return search(1, n)
+	return function (n: number): number {
+		return search(1, n);
 	};
 };
-
 
 export default solution;

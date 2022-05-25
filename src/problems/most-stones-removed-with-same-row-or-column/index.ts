@@ -19,7 +19,6 @@ export default function removeStones(stones: Array<[number, number]>): number {
 			union.unify(unionPosition, jIndexes[j]);
 		} else {
 			jIndexes[j] = unionPosition;
-
 		}
 	});
 

@@ -4,7 +4,7 @@ import problemFunction from './index';
 
 describe(path.basename(__dirname), () => {
 	it('should work with test case 1', () => {
-		expect(problemFunction(5, [1,2,5])).toBe(4);
+		expect(problemFunction(5, [1, 2, 5])).toBe(4);
 	});
 
 	it('should work with test case 2', () => {

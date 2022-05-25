@@ -16,7 +16,7 @@ function isPossible(weights: number[], days: number, amount: number): boolean {
 export default function shipWithinDays(weights: number[], days: number): number {
 	let max = 0;
 	let min = 0;
-	weights.forEach(value => {
+	weights.forEach((value) => {
 		max += value;
 		min = Math.max(value, min);
 	});
@@ -29,8 +29,7 @@ export default function shipWithinDays(weights: number[], days: number): number 
 		} else {
 			min = mid + 1;
 		}
-
 	}
 
 	return min;
-};
+}

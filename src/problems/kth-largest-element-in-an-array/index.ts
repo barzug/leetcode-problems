@@ -4,43 +4,43 @@ function partition(nums: number[], k: number, first: number, last: number): numb
 	}
 
 	const pivot = Math.floor((last - first) / 2) + first;
-	[nums[pivot], nums[first]] = [nums[first], nums[pivot]]
+	[nums[pivot], nums[first]] = [nums[first], nums[pivot]];
 
 	let i = first + 1;
 	let j = last;
 	while (true) {
 		while (nums[i] < nums[first]) {
-			i++
+			i++;
 		}
 
 		while (nums[j] > nums[first]) {
-			j--
+			j--;
 		}
 
 		if (j <= i) {
 			break;
 		}
 
-		[nums[i], nums[j]] = [nums[j], nums[i]]
-		i++
-		j--
+		[nums[i], nums[j]] = [nums[j], nums[i]];
+		i++;
+		j--;
 	}
 
-	[nums[first], nums[j]] = [nums[j], nums[first]]
+	[nums[first], nums[j]] = [nums[j], nums[first]];
 
 	if (j === k) {
 		return j;
 	}
 
 	if (j > k) {
-		return partition(nums, k, first, j - 1)
+		return partition(nums, k, first, j - 1);
 	} else {
-		return partition(nums, k,j + 1, last)
+		return partition(nums, k, j + 1, last);
 	}
 }
 
 export default function findKthLargest(nums: number[], k: number): number {
-	const partitionElement = partition(nums, nums.length - k, 0, nums.length - 1)
+	const partitionElement = partition(nums, nums.length - k, 0, nums.length - 1);
 
 	return nums[partitionElement];
-};
+}

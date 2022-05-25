@@ -19,6 +19,5 @@ export default function findMinArrowShots(points: number[][]): number {
 		}
 	});
 
-
 	return result + 1;
-};
+}

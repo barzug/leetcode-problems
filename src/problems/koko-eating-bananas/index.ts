@@ -20,8 +20,7 @@ export default function minEatingSpeed(piles: number[], h: number): number {
 		} else {
 			l = mid + 1;
 		}
-
 	}
 
 	return l;
-};
+}

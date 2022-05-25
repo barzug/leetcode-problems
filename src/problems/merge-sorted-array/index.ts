@@ -1,12 +1,7 @@
 /**
  Do not return anything, modify nums1 in-place instead.
  */
-export default function merge(
-	nums1: number[],
-	m: number,
-	nums2: number[],
-	n: number
-): void {
+export default function merge(nums1: number[], m: number, nums2: number[], n: number): void {
 	let i = m - 1;
 	let j = n - 1;
 	while (i >= 0 && j >= 0) {

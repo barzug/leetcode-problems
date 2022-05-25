@@ -11,7 +11,7 @@ function search(y: number, n: number, column: boolean[], diagonale1: boolean[], 
 			diagonale1[i - y + n] = true;
 			diagonale2[i + y] = true;
 
-			countResult += search(y + 1, n, column, diagonale1, diagonale2)
+			countResult += search(y + 1, n, column, diagonale1, diagonale2);
 
 			column[i] = false;
 			diagonale1[i - y + n] = false;

@@ -4,11 +4,7 @@ const _defaultComparator: Comparator<any> = function (a, b) {
 	return a - b;
 };
 
-function merge<T>(
-	left: Array<T>,
-	right: Array<T>,
-	comparator: Comparator<T>
-): Array<T> {
+function merge<T>(left: Array<T>, right: Array<T>, comparator: Comparator<T>): Array<T> {
 	const array = [];
 
 	let i = 0;
@@ -24,11 +20,7 @@ function merge<T>(
 	return array.concat(left.slice(i), right.slice(j));
 }
 
-
-export default function mergeSort<T = number>(
-	array: Array<T>,
-	comparator: Comparator<T> = _defaultComparator
-) {
+export default function mergeSort<T = number>(array: Array<T>, comparator: Comparator<T> = _defaultComparator) {
 	if (array.length <= 1) {
 		return array;
 	}

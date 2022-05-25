@@ -5,19 +5,19 @@ export default function intervalIntersection(firstList: number[][], secondList: 
 	let j = 0;
 
 	while (i < firstList.length && j < secondList.length) {
-		const start = Math.max(firstList[i][0], secondList[j][0])
-		const end = Math.min(firstList[i][1], secondList[j][1])
+		const start = Math.max(firstList[i][0], secondList[j][0]);
+		const end = Math.min(firstList[i][1], secondList[j][1]);
 
 		if (start <= end) {
 			result.push([start, end]);
 		}
 
 		if (firstList[i][1] < secondList[j][1]) {
-			i++
+			i++;
 		} else {
-			j++
+			j++;
 		}
 	}
 
 	return result;
-};
+}

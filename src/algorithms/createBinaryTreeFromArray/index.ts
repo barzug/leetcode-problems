@@ -4,9 +4,9 @@ export class TreeNode {
 	right: TreeNode | null;
 
 	constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
-		this.val = (val === undefined ? 0 : val);
-		this.left = (left === undefined ? null : left);
-		this.right = (right === undefined ? null : right);
+		this.val = val === undefined ? 0 : val;
+		this.left = left === undefined ? null : left;
+		this.right = right === undefined ? null : right;
 	}
 }
 
@@ -18,19 +18,19 @@ export default function createBinaryTreeFromArray(array: Array<number>): TreeNod
 	let firstQueuePos = 0;
 	let position = 1;
 	while (queue.length !== firstQueuePos) {
-		const localRoot = queue[firstQueuePos++]
+		const localRoot = queue[firstQueuePos++];
 
 		if (typeof array[position] !== 'undefined' && array[position] !== null) {
 			localRoot.left = new TreeNode(array[position]);
-			queue.push(localRoot.left)
+			queue.push(localRoot.left);
 		}
-		position++
+		position++;
 
 		if (typeof array[position] !== 'undefined' && array[position] !== null) {
 			localRoot.right = new TreeNode(array[position]);
-			queue.push(localRoot.right)
+			queue.push(localRoot.right);
 		}
-		position++
+		position++;
 	}
 
 	return root;

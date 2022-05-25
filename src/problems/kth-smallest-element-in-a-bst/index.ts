@@ -1,18 +1,18 @@
-import {TreeNode} from '@/algorithms/createBinaryTreeFromArray'
+import { TreeNode } from '@/algorithms/createBinaryTreeFromArray';
 
 export default function kthSmallest(root: TreeNode | null, k: number): number {
 	const stack: Array<TreeNode> = [];
 	let i = k;
 
 	while (root !== null) {
-		stack.push(root)
+		stack.push(root);
 		root = root.left;
 	}
 
 	while (k !== 0) {
-		const node = stack.pop()
+		const node = stack.pop();
 
-		i--
+		i--;
 		if (i === 0) {
 			return node.val;
 		}

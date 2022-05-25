@@ -29,15 +29,6 @@ describe('quickSort', () => {
 
 		const array = ['a', 'ж', 'ё', 'е', 'г', 'в', 'б', 'д'];
 
-		expect(quickSort(array.slice(), comparator)).toEqual([
-			'a',
-			'б',
-			'в',
-			'г',
-			'д',
-			'е',
-			'ё',
-			'ж',
-		]);
+		expect(quickSort(array.slice(), comparator)).toEqual(['a', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж']);
 	});
 });

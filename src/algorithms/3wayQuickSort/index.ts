@@ -1,6 +1,6 @@
 type Comparator<T> = (a: T, b: T) => number;
 
-const _defaultComparator: Comparator<any> = function(a, b) {
+const _defaultComparator: Comparator<any> = function (a, b) {
 	return a - b;
 };
 
@@ -14,20 +14,20 @@ function _quickSort<T = number>(array: Array<T>, first: number, last: number, co
 	[array[first], array[pivot]] = [array[pivot], array[first]];
 
 	const comparable = array[first];
-	let left = first
-	let right = last
+	let left = first;
+	let right = last;
 	let i = first;
 
 	while (i <= right) {
 		if (comparator(array[i], comparable) < 0) {
-			[array[left], array[i]] = [array[i], array[left]]
-			left++
-			i++
+			[array[left], array[i]] = [array[i], array[left]];
+			left++;
+			i++;
 		} else if (comparator(array[i], comparable) > 0) {
-			[array[right], array[i]] = [array[i], array[right]]
-			right--
+			[array[right], array[i]] = [array[i], array[right]];
+			right--;
 		} else {
-			i++
+			i++;
 		}
 	}
 
@@ -37,11 +37,11 @@ function _quickSort<T = number>(array: Array<T>, first: number, last: number, co
 
 export default function quickSort<T = number>(
 	array: Array<T>,
-	comparator: Comparator<T> = _defaultComparator,
+	comparator: Comparator<T> = _defaultComparator
 ): Array<T> {
 	// shuffleArray ?
 
-	_quickSort(array, 0, array.length - 1, comparator)
+	_quickSort(array, 0, array.length - 1, comparator);
 
 	return array;
 }

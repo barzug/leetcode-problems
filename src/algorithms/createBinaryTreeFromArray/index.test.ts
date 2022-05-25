@@ -2,7 +2,7 @@ import createBinaryTreeFromArray from './index';
 
 describe('createBinaryTreeFromArray', () => {
 	it(`create arrays correctly`, () => {
-		const binaryTree = createBinaryTreeFromArray([5,3,6,2,4,null,null,1])
+		const binaryTree = createBinaryTreeFromArray([5, 3, 6, 2, 4, null, null, 1]);
 
 		expect(binaryTree.val).toEqual(5);
 		expect(binaryTree.left?.val).toEqual(3);
@@ -14,7 +14,7 @@ describe('createBinaryTreeFromArray', () => {
 	});
 
 	it(`work with null elements in leetcode ways`, () => {
-		const binaryTree = createBinaryTreeFromArray([5,4,8,11,null,13,4,7,2,null,null,5,1])
+		const binaryTree = createBinaryTreeFromArray([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1]);
 
 		expect(binaryTree.val).toEqual(5);
 		expect(binaryTree.right?.val).toEqual(8);
@@ -25,7 +25,7 @@ describe('createBinaryTreeFromArray', () => {
 	});
 
 	it(`work with 0 elements`, () => {
-		const binaryTree = createBinaryTreeFromArray([5,4,0,11,null,13,4,7,2,null,null,5,1])
+		const binaryTree = createBinaryTreeFromArray([5, 4, 0, 11, null, 13, 4, 7, 2, null, null, 5, 1]);
 
 		expect(binaryTree.val).toEqual(5);
 		expect(binaryTree.right?.val).toEqual(0);

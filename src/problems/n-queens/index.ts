@@ -1,11 +1,19 @@
-function search(y: number, n: number, column: boolean[], diagonale1: boolean[], diagonale2: boolean[], positions: number[], result: string[][]) {
+function search(
+	y: number,
+	n: number,
+	column: boolean[],
+	diagonale1: boolean[],
+	diagonale2: boolean[],
+	positions: number[],
+	result: string[][]
+) {
 	if (y === n) {
 		let resultArray = [];
 		for (let i = 0; i < n; i++) {
-			resultArray.push(`${'.'.repeat(positions[i])}Q${'.'.repeat(n - positions[i] - 1)}`)
+			resultArray.push(`${'.'.repeat(positions[i])}Q${'.'.repeat(n - positions[i] - 1)}`);
 		}
 
-		result.push(resultArray)
+		result.push(resultArray);
 	}
 
 	let countResult = 0;
@@ -17,7 +25,7 @@ function search(y: number, n: number, column: boolean[], diagonale1: boolean[], 
 			diagonale2[i + y] = true;
 			positions.push(i);
 
-			search(y + 1, n, column, diagonale1, diagonale2, positions, result)
+			search(y + 1, n, column, diagonale1, diagonale2, positions, result);
 
 			positions.pop();
 			column[i] = false;
@@ -30,7 +38,7 @@ function search(y: number, n: number, column: boolean[], diagonale1: boolean[], 
 }
 
 export default function solveNQueens(n: number): string[][] {
-	const result = []
+	const result = [];
 	search(0, n, [], [], [], [], result);
 
 	return result;

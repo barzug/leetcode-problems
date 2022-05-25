@@ -1,8 +1,6 @@
 import QuickUnion from '@/dataStructures/QuickUnion';
 
-export default function findRedundantConnection(
-	edges: Array<[number, number]>
-): [number, number] {
+export default function findRedundantConnection(edges: Array<[number, number]>): [number, number] {
 	const n = edges.length;
 
 	const union = new QuickUnion(n);

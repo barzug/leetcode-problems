@@ -1,6 +1,6 @@
 type Comparator<T> = (a: T, b: T) => number;
 
-const _defaultComparator: Comparator<any> = function(a, b) {
+const _defaultComparator: Comparator<any> = function (a, b) {
 	return a - b;
 };
 
@@ -18,11 +18,11 @@ function _quickSort<T = number>(array: Array<T>, first: number, last: number, co
 
 	while (true) {
 		while (comparator(array[i], array[first]) < 0) {
-			i++
+			i++;
 		}
 
 		while (comparator(array[j], array[first]) > 0) {
-			j--
+			j--;
 		}
 
 		if (i >= j) {
@@ -42,11 +42,11 @@ function _quickSort<T = number>(array: Array<T>, first: number, last: number, co
 
 export default function quickSort<T = number>(
 	array: Array<T>,
-	comparator: Comparator<T> = _defaultComparator,
+	comparator: Comparator<T> = _defaultComparator
 ): Array<T> {
 	// shuffleArray ?
 
-	_quickSort(array, 0, array.length - 1, comparator)
+	_quickSort(array, 0, array.length - 1, comparator);
 
 	return array;
 }

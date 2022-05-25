@@ -6,7 +6,7 @@ export default function coinChange(coins: number[], amount: number): number {
 
 		for (let j = 0; j < coins.length; j++) {
 			if (typeof array[i - coins[j]] !== 'undefined') {
-				min = Math.min(min, array[i - coins[j]])
+				min = Math.min(min, array[i - coins[j]]);
 			}
 		}
 
