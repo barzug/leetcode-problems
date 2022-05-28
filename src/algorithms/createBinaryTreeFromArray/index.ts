@@ -11,6 +11,10 @@ export class TreeNode {
 }
 
 export default function createBinaryTreeFromArray(array: Array<number>): TreeNode {
+	if (array.length === 0) {
+		return null;
+	}
+
 	const queue: Array<TreeNode> = [];
 	const root = new TreeNode(array[0]);
 
