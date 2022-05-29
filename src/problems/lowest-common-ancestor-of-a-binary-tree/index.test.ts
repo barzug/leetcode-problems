@@ -10,9 +10,7 @@ describe(path.basename(__dirname), () => {
 		const q = tree.right;
 		const commonAncestor = tree;
 
-		expect(
-			problemFunction(tree, p, q),
-		).toBe(commonAncestor);
+		expect(problemFunction(tree, p, q)).toBe(commonAncestor);
 	});
 
 	it('should work with test case 2', () => {
@@ -21,19 +19,15 @@ describe(path.basename(__dirname), () => {
 		const q = tree.left.right.right;
 		const commonAncestor = p;
 
-		expect(
-			problemFunction(tree, p, q),
-		).toBe(commonAncestor);
+		expect(problemFunction(tree, p, q)).toBe(commonAncestor);
 	});
 
 	it('should work with test case 3', () => {
-		const tree = createBinaryTreeFromArray([1,2]);
+		const tree = createBinaryTreeFromArray([1, 2]);
 		const p = tree;
 		const q = tree.left;
 		const commonAncestor = p;
 
-		expect(
-			problemFunction(tree, p, q),
-		).toBe(commonAncestor);
+		expect(problemFunction(tree, p, q)).toBe(commonAncestor);
 	});
 });

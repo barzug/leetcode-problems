@@ -1,13 +1,16 @@
-import {TreeNode} from '@/algorithms/createBinaryTreeFromArray';
+import { TreeNode } from '@/algorithms/createBinaryTreeFromArray';
 
-
-export default function lowestCommonAncestor(root: TreeNode | null, p: TreeNode | null, q: TreeNode | null): TreeNode | null {
+export default function lowestCommonAncestor(
+	root: TreeNode | null,
+	p: TreeNode | null,
+	q: TreeNode | null
+): TreeNode | null {
 	if (!root || !p || !q) {
 		return null;
 	}
 
 	const stack = [root];
-	const stackRootMap = []
+	const stackRootMap = [];
 
 	let i = 0;
 	while (i !== stack.length) {
@@ -21,20 +24,20 @@ export default function lowestCommonAncestor(root: TreeNode | null, p: TreeNode 
 			stackRootMap[stack.length - 1] = i;
 		}
 
-		i++
+		i++;
 	}
 
 	while (stack.length && p !== q) {
 		let value = stack.pop();
 
 		if (value === p) {
-			p = stack[stackRootMap[stack.length]]
+			p = stack[stackRootMap[stack.length]];
 		}
 
 		if (value === q) {
-			q = stack[stackRootMap[stack.length]]
+			q = stack[stackRootMap[stack.length]];
 		}
 	}
 
 	return p === q ? p : null;
-};
+}

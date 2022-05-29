@@ -17,7 +17,6 @@ export default function canFinish(numCourses: number, prerequisites: number[][])
 			return true;
 		}
 
-
 		nodesState[index] = 1;
 
 		const result = graph[index].every((value) => dfs(value));
@@ -27,7 +26,6 @@ export default function canFinish(numCourses: number, prerequisites: number[][])
 		return result;
 	}
 
-
 	return graph.every((_, index) => {
 		if (nodesState[index] === 0) {
 			return dfs(index);
@@ -35,4 +33,4 @@ export default function canFinish(numCourses: number, prerequisites: number[][])
 
 		return true;
 	});
-};
+}

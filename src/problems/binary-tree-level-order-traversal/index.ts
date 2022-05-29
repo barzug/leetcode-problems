@@ -1,4 +1,4 @@
-import {TreeNode} from '@/algorithms/createBinaryTreeFromArray';
+import { TreeNode } from '@/algorithms/createBinaryTreeFromArray';
 
 export default function levelOrder(root: TreeNode | null): number[][] {
 	if (!root) {
@@ -27,4 +27,4 @@ export default function levelOrder(root: TreeNode | null): number[][] {
 	}
 
 	return result;
-};
+}

@@ -1,5 +1,4 @@
-import {TreeNode} from '@/algorithms/createBinaryTreeFromArray';
-
+import { TreeNode } from '@/algorithms/createBinaryTreeFromArray';
 
 export default function pathSum(root: TreeNode | null, targetSum: number): number {
 	let result = 0;
@@ -25,10 +24,9 @@ export default function pathSum(root: TreeNode | null, targetSum: number): numbe
 		stack.pop();
 	}
 
-
 	const stack: Array<number> = [];
 
 	dfs(root, stack);
 
-	return result
-};
+	return result;
+}

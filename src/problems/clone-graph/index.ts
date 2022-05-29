@@ -1,13 +1,12 @@
-import {TreeNode} from '@/algorithms/createBinaryTreeFromArray';
-
+import { TreeNode } from '@/algorithms/createBinaryTreeFromArray';
 
 class Node {
 	val: number;
 	neighbors: Node[];
 
 	constructor(val?: number, neighbors?: Node[]) {
-		this.val = (val === undefined ? 0 : val);
-		this.neighbors = (neighbors === undefined ? [] : neighbors);
+		this.val = val === undefined ? 0 : val;
+		this.neighbors = neighbors === undefined ? [] : neighbors;
 	}
 }
 
@@ -33,4 +32,4 @@ export default function cloneGraph(node: Node | null): Node | null {
 	}
 
 	return _cloneGraph(node);
-};
+}
