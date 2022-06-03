@@ -8,7 +8,7 @@ export default function minCostConnectPoints(points: Array<[number, number]>): n
 	const priorities: [number, number, number][] = [];
 
 	for (let i = 0; i < points.length; i++) {
-		for (let j = i; j < points.length; j++) {
+		for (let j = i + 1; j < points.length; j++) {
 			const distance = manhattanDistance(points[i], points[j]);
 
 			priorities.push([distance, i, j]);
