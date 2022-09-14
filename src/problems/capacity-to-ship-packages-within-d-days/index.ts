@@ -14,13 +14,15 @@ function isPossible(weights: number[], days: number, amount: number): boolean {
 }
 
 export default function shipWithinDays(weights: number[], days: number): number {
-	let max = 0;
-	let min = 0;
+	let sumOfWeights = 0;
+	let maxValue = 0;
 	weights.forEach((value) => {
-		max += value;
-		min = Math.max(value, min);
+		sumOfWeights += value;
+		maxValue = Math.max(value, maxValue);
 	});
 
+	let min = maxValue;
+	let max = sumOfWeights;
 	while (min < max) {
 		const mid = Math.floor((max + min) / 2);
 
