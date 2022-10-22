@@ -13,26 +13,28 @@
 // 		this.comparator = comparator;
 // 	}
 //
-// 	public pop(): T | null {
-// 		if (this.heap.length === 1) {
-// 			return null;
-// 		}
+// public pop(): T | null {
+// 	if (this.heap.length === 1) {
+// 		return null;
+// 	}
 //
-// 		let smallest = this.heap[1];
+// 	let smallest = this.heap[1];
 //
-// 		this.heap[1] = this.heap[this.heap.length - 1];
-// 		this.heap.splice(this.heap.length - 1);
+// 	this.heap[1] = this.heap[this.heap.length - 1];
+// 	this.heap.splice(this.heap.length - 1);
 //
-// 		const length = this.heap.length;
+// 	const length = this.heap.length;
 //
-// 		let currentIndex = 1;
-// 		let leftChildIndex = currentIndex * 2;
-// 		let rightChildIndex = currentIndex * 2 + 1;
+// 	let currentIndex = 1;
+// 	let leftChildIndex = currentIndex * 2;
+// 	let rightChildIndex = currentIndex * 2 + 1;
 //
-// 		while (
-// 			(leftChildIndex < length && (this.comparator(this.heap[currentIndex], this.heap[leftChildIndex]) < 0)) ||
-// 			(rightChildIndex < length && (this.comparator(this.heap[currentIndex], this.heap[rightChildIndex]) < 0))
+// 	while (
+// 		(leftChildIndex < length && (this.comparator(this.heap[currentIndex], this.heap[leftChildIndex]) < 0)) ||
+// 		(rightChildIndex < length && (this.comparator(this.heap[currentIndex], this.heap[rightChildIndex]) < 0))
 // 		) {
+//
+// 		if (rightChildIndex >= length) {
 // 			if (this.comparator(this.heap[currentIndex], this.heap[leftChildIndex]) < 0) {
 // 				[this.heap[currentIndex], this.heap[leftChildIndex]] = [
 // 					this.heap[leftChildIndex],
@@ -40,21 +42,26 @@
 // 				];
 // 				currentIndex = leftChildIndex;
 // 			}
-//
-// 			if (this.comparator(this.heap[currentIndex], this.heap[rightChildIndex]) < 0) {
-// 				[this.heap[currentIndex], this.heap[rightChildIndex]] = [
-// 					this.heap[rightChildIndex],
-// 					this.heap[currentIndex],
-// 				];
-// 				currentIndex = rightChildIndex;
-// 			}
-//
-// 			leftChildIndex = currentIndex * 2;
-// 			rightChildIndex = currentIndex * 2 + 1;
+// 		} else if (this.comparator(this.heap[currentIndex], this.heap[leftChildIndex]) < 0 && this.comparator(this.heap[rightChildIndex], this.heap[leftChildIndex]) < 0) {
+// 			[this.heap[currentIndex], this.heap[leftChildIndex]] = [
+// 				this.heap[leftChildIndex],
+// 				this.heap[currentIndex],
+// 			];
+// 			currentIndex = leftChildIndex;
+// 		} else {
+// 			[this.heap[currentIndex], this.heap[rightChildIndex]] = [
+// 				this.heap[rightChildIndex],
+// 				this.heap[currentIndex],
+// 			];
+// 			currentIndex = rightChildIndex;
 // 		}
 //
-// 		return smallest;
+// 		leftChildIndex = currentIndex * 2;
+// 		rightChildIndex = currentIndex * 2 + 1;
 // 	}
+//
+// 	return smallest;
+// }
 //
 // 	public push(element: T): void {
 // 		this.heap.push(element);
