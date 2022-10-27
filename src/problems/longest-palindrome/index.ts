@@ -6,7 +6,7 @@ export default function longestPalindrome(s: string): number {
 			letters[s[i]] = 0;
 		}
 
-		letters[s[i]]++
+		letters[s[i]]++;
 	}
 
 	let result = 0;
@@ -18,11 +18,11 @@ export default function longestPalindrome(s: string): number {
 			hasMiddleSymbol = true;
 			result += letters[letter] - 1;
 		}
-	})
+	});
 
 	if (hasMiddleSymbol) {
 		result++;
 	}
 
 	return result;
-};
+}

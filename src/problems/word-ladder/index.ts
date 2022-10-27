@@ -3,7 +3,7 @@ function checkDistanceIsOne(word1, word2): boolean {
 
 	for (let i = 0; i < word1.length && distance <= 1; i++) {
 		if (word1[i] !== word2[i]) {
-			distance++
+			distance++;
 		}
 	}
 
@@ -23,12 +23,12 @@ export default function ladderLength(beginWord: string, endWord: string, wordLis
 	let newRowIndex = 1;
 	while (queueFirstIndex < queue.length) {
 		if (queueFirstIndex === newRowIndex) {
-			row++
+			row++;
 			newRowIndex = queue.length;
 		}
 
 		const node = queue[queueFirstIndex];
-		queueFirstIndex++
+		queueFirstIndex++;
 
 		for (let i = 0; i < wordList.length; i++) {
 			if (alreadyChecked[i]) {
@@ -49,4 +49,4 @@ export default function ladderLength(beginWord: string, endWord: string, wordLis
 	}
 
 	return 0;
-};
+}

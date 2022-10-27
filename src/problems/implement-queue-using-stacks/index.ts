@@ -4,7 +4,7 @@ class MyQueue {
 
 	_fillOutputStack() {
 		while (this.inputStack.length !== 0) {
-			this.outputStack.push(this.inputStack.pop())
+			this.outputStack.push(this.inputStack.pop());
 		}
 	}
 
@@ -17,7 +17,7 @@ class MyQueue {
 			return this.outputStack.pop();
 		}
 
-		this._fillOutputStack()
+		this._fillOutputStack();
 
 		return this.outputStack.pop();
 	}
@@ -27,12 +27,12 @@ class MyQueue {
 			return this.outputStack[this.outputStack.length - 1];
 		}
 
-		this._fillOutputStack()
+		this._fillOutputStack();
 
 		return this.outputStack[this.outputStack.length - 1];
 	}
 
 	empty(): boolean {
-		return (this.outputStack.length === 0 && this.inputStack.length === 0);
+		return this.outputStack.length === 0 && this.inputStack.length === 0;
 	}
 }

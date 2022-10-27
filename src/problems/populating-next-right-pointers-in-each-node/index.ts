@@ -5,10 +5,10 @@ class Node {
 	next: Node | null;
 
 	constructor(val?: number, left?: Node, right?: Node, next?: Node) {
-		this.val = (val === undefined ? 0 : val);
-		this.left = (left === undefined ? null : left);
-		this.right = (right === undefined ? null : right);
-		this.next = (next === undefined ? null : next);
+		this.val = val === undefined ? 0 : val;
+		this.left = left === undefined ? null : left;
+		this.right = right === undefined ? null : right;
+		this.next = next === undefined ? null : next;
 	}
 }
 
@@ -30,7 +30,7 @@ export default function connect(root: Node | null): Node | null {
 		}
 
 		if (isFirst) {
-			nextRowElement = element.left
+			nextRowElement = element.left;
 		}
 
 		if (element.left) {
@@ -39,13 +39,13 @@ export default function connect(root: Node | null): Node | null {
 		}
 
 		if (element.next) {
-			bfsModify(element.next, false)
+			bfsModify(element.next, false);
 		} else {
-			bfsModify(nextRowElement, true)
+			bfsModify(nextRowElement, true);
 		}
 	}
 
 	bfsModify(root, true);
 
 	return root;
-};
+}

@@ -8,10 +8,10 @@ export default function combinationSum(candidates: number[], target: number): nu
 				continue;
 			}
 
-			const additionalOptions = result[i - candidat].map((option) => [...option, candidat])
+			const additionalOptions = result[i - candidat].map((option) => [...option, candidat]);
 			result[i] = result[i].concat(additionalOptions);
 		}
 	});
 
 	return result[target];
-};
+}

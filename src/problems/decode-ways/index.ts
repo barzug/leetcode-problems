@@ -24,4 +24,4 @@ export default function numDecodings(s: string): number {
 	}
 
 	return cache[s.length];
-};
+}

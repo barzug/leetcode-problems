@@ -13,7 +13,7 @@ export default function minDifficulty(jobDifficulty: number[], d: number): numbe
 		if (d === 1) {
 			const result = Math.max(...jobDifficulty.slice(start));
 			cache[`${start},${d}`] = result;
-			return result
+			return result;
 		}
 
 		let maxLeftElement = 0;

@@ -1,4 +1,4 @@
-import {TreeNode} from '@/algorithms/createBinaryTreeFromArray';
+import { TreeNode } from '@/algorithms/createBinaryTreeFromArray';
 
 export default function zigzagLevelOrder(root: TreeNode | null): number[][] {
 	if (!root) {

@@ -1,5 +1,4 @@
-import mergeTwoLists, {ListNode} from '@/problems/merge-two-sorted-lists'
-
+import mergeTwoLists, { ListNode } from '@/problems/merge-two-sorted-lists';
 
 function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
 	let remainLists = lists;

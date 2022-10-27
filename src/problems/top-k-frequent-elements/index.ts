@@ -21,12 +21,12 @@ export default function topKFrequent(nums: number[], k: number): number[] {
 			continue;
 		}
 
-		result.push(...freqArrayOfArrays[i])
+		result.push(...freqArrayOfArrays[i]);
 
 		if (result.length >= k) {
-			return result
+			return result;
 		}
 	}
 
 	return result;
-};
+}

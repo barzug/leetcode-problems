@@ -36,5 +36,5 @@ export default function findOrder(numCourses: number, prerequisites: number[][])
 		return true;
 	});
 
-	return  withoutCycles ? result.reverse() : [];
+	return withoutCycles ? result.reverse() : [];
 }

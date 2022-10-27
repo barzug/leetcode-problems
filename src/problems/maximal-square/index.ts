@@ -7,7 +7,7 @@ export default function maximalSquare(matrix: string[][]): number {
 		for (let j = 0; j < matrix[0].length; j++) {
 			if (matrix[i][j] !== '1') {
 				dpMatrix[j] = 0;
-				continue
+				continue;
 			}
 
 			const updatedElement = Math.min(prevLeftElement, dpMatrix[j], j > 0 ? dpMatrix[j - 1] : 0) + 1;

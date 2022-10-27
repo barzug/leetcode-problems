@@ -121,7 +121,6 @@
 // 	return result.reverse().sort(comparator);
 // }
 
-
 export default function topKFrequent(words: string[], k: number): string[] {
 	const frequencyMap = {};
 	words.forEach((value) => {

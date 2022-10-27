@@ -17,6 +17,5 @@ export default function hasCycle(head: ListNode | null): boolean {
 		doublePointer = doublePointer.next?.next;
 	}
 
-
 	return !!doublePointer;
-};
+}

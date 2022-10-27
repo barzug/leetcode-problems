@@ -1,4 +1,4 @@
-import {TreeNode} from '@/algorithms/createBinaryTreeFromArray';
+import { TreeNode } from '@/algorithms/createBinaryTreeFromArray';
 
 // export default function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
 // 	if (!inorder.length) {
@@ -20,10 +20,8 @@ import {TreeNode} from '@/algorithms/createBinaryTreeFromArray';
 // 	return new TreeNode(head,  buildTree(leftPreorderSubtree, leftInorderSubtree), buildTree(rightPreorderSubtree, rightInorderSubtree));
 // };
 
-
 // preorder: [1, 2, 4, 5, 3, 6]
 // inorder: [4, 2, 5, 1, 6, 3]
-
 
 //       1
 //      / \
@@ -36,17 +34,17 @@ export default function buildTree(preorder: number[], inorder: number[]): TreeNo
 	let i = 0;
 	function build(stop?: number) {
 		if (inorder[i] === stop) {
-			return null
+			return null;
 		}
 
-		const root = new TreeNode(preorder[p++])
+		const root = new TreeNode(preorder[p++]);
 
-		root.left = build(root.val)
-		i++
-		root.right = build(stop)
+		root.left = build(root.val);
+		i++;
+		root.right = build(stop);
 
-		return root
+		return root;
 	}
 
-	return build()
-};
+	return build();
+}

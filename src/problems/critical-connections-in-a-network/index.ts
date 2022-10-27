@@ -1,9 +1,9 @@
 export default function criticalConnections(n: number, connections: number[][]): number[][] {
-	const graph = new Array(n + 1).fill(0).map(() => [])
+	const graph = new Array(n + 1).fill(0).map(() => []);
 	connections.forEach(([node1, node2]) => {
 		graph[node1].push(node2);
 		graph[node2].push(node1);
-	})
+	});
 
 	const graphMarks = new Array(n + 1).fill(-1);
 
@@ -23,18 +23,18 @@ export default function criticalConnections(n: number, connections: number[][]):
 			}
 
 			if (graphMarks[next] !== -1) {
-				lowestRank = Math.min(graphMarks[next], lowestRank)
+				lowestRank = Math.min(graphMarks[next], lowestRank);
 
-				continue
+				continue;
 			}
 
-			const oldestValue = _dfsTarjan(next, node, index + 1)
+			const oldestValue = _dfsTarjan(next, node, index + 1);
 
 			if (oldestValue > graphMarks[node]) {
-				resultNode.push([node, next])
+				resultNode.push([node, next]);
 			}
 
-			lowestRank = Math.min(oldestValue, lowestRank)
+			lowestRank = Math.min(oldestValue, lowestRank);
 		}
 
 		return lowestRank;
@@ -43,4 +43,4 @@ export default function criticalConnections(n: number, connections: number[][]):
 	_dfsTarjan(0, 0, 0);
 
 	return resultNode;
-};
+}

@@ -8,25 +8,24 @@ export class ListNode {
 	}
 }
 
-
 export default function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
 	if (!list1) {
 		return list2;
 	}
 	if (!list2) {
-		return list1
+		return list1;
 	}
 
 	let p1 = list1;
 	let p2 = list2;
-	let pRes
+	let pRes;
 
 	if (p1.val < p2.val) {
 		pRes = p1;
 		p1 = p1.next;
 	} else {
 		pRes = p2;
-		p2 = p2.next
+		p2 = p2.next;
 	}
 	const result = pRes;
 
@@ -54,5 +53,5 @@ export default function mergeTwoLists(list1: ListNode | null, list2: ListNode | 
 		}
 	}
 
-	return result
+	return result;
 }

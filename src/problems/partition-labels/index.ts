@@ -1,10 +1,9 @@
 export default function partitionLabels(s: string): number[] {
-	const lastStringPosition: {[key: string]: number} = {}
+	const lastStringPosition: { [key: string]: number } = {};
 
 	for (let i = 0; i < s.length; i++) {
 		lastStringPosition[s[i]] = i;
 	}
-
 
 	const result = [];
 	let lastPartitionPosition = 0;
@@ -25,4 +24,4 @@ export default function partitionLabels(s: string): number[] {
 	}
 
 	return result;
-};
+}

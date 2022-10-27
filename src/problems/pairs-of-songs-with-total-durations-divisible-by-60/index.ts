@@ -9,7 +9,7 @@ export default function numPairsDivisibleBy60(time: number[]): number {
 		result += numbers[(MINUTE - reminder) % MINUTE];
 
 		numbers[reminder]++;
-	})
+	});
 
-	return result
-};
+	return result;
+}

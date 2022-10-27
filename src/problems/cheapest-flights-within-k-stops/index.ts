@@ -12,4 +12,4 @@ export default function findCheapestPrice(n: number, flights: number[][], src: n
 	}
 
 	return costs[k + 1][dst] === Infinity ? -1 : costs[k + 1][dst];
-};
+}

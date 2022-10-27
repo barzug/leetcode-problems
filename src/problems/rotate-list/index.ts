@@ -35,5 +35,5 @@ function rotateRight(head: ListNode | null, k: number): ListNode | null {
 	const newHead = pointer.next;
 	pointer.next = null;
 
-	return newHead
+	return newHead;
 }

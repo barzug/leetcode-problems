@@ -29,4 +29,4 @@ export default function findMinHeightTrees(n: number, edges: number[][]): number
 	}
 
 	return leaves;
-};
+}

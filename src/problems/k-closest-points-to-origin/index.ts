@@ -8,30 +8,30 @@ export default function kClosest(points: Array<[number, number]>, k: number): nu
 			return left;
 		}
 
-		const partition = array[left] // could be optimized
+		const partition = array[left]; // could be optimized
 
 		let p = left + 1;
 		let q = right;
 
 		while (true) {
 			while (array[p] && euclideanDistance(array[p], [0, 0]) < euclideanDistance(partition, [0, 0])) {
-				p++
+				p++;
 			}
 
 			while (euclideanDistance(array[q], [0, 0]) > euclideanDistance(partition, [0, 0])) {
-				q--
+				q--;
 			}
 
 			if (p >= q) {
 				break;
 			}
 
-			[array[q], array[p]] = [array[p], array[q]]
+			[array[q], array[p]] = [array[p], array[q]];
 			p++;
 			q--;
 		}
 
-		[array[left], array[q]] = [array[q], array[left]]
+		[array[left], array[q]] = [array[q], array[left]];
 
 		if (q === k) {
 			return;
@@ -45,7 +45,7 @@ export default function kClosest(points: Array<[number, number]>, k: number): nu
 	}
 
 	const copyOfArray = [...points];
-	sortByKth(copyOfArray, 0, points.length - 1, k)
+	sortByKth(copyOfArray, 0, points.length - 1, k);
 
-	return copyOfArray.slice(0, k)
-};
+	return copyOfArray.slice(0, k);
+}

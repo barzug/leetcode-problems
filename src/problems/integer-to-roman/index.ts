@@ -11,9 +11,8 @@ const map = {
 	400: 'CD',
 	500: 'D',
 	900: 'CM',
-	1000: 'M'
-}
-
+	1000: 'M',
+};
 
 export default function intToRoman(num: number): string {
 	const values = Object.keys(map).sort((a, b) => Number(b) - Number(a));
@@ -27,6 +26,5 @@ export default function intToRoman(num: number): string {
 		}
 	}
 
-
 	return resultArray.join('');
-};
+}

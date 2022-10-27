@@ -18,7 +18,7 @@ export default function trap(height: number[]): number {
 			if (leftMax < height[leftPointer]) {
 				leftMax = height[leftPointer];
 			} else {
-				result += leftMax - height[leftPointer]
+				result += leftMax - height[leftPointer];
 			}
 		} else {
 			rightPointer--;
@@ -26,7 +26,7 @@ export default function trap(height: number[]): number {
 			if (rightMax < height[rightPointer]) {
 				rightMax = height[rightPointer];
 			} else {
-				result += rightMax - height[rightPointer]
+				result += rightMax - height[rightPointer];
 			}
 		}
 	}

@@ -10,11 +10,11 @@ class Node {
 
 export default function reverseList(head: ListNode | null): ListNode | null {
 	if (!head) {
-		return
+		return;
 	}
 
 	let pointer = head;
-	let nextPointer = head.next
+	let nextPointer = head.next;
 	let nextNextPointer = head.next?.next;
 
 	head.next = null;
@@ -27,4 +27,4 @@ export default function reverseList(head: ListNode | null): ListNode | null {
 	}
 
 	return pointer;
-};
+}
